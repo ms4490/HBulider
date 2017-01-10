@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=.5,minimum-scale=.5,maximum-scale=.5,user-scalable=no" />
+    <title>餐厅类型</title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/iscroll-probe.js"></script>
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/shopStyle.css" rel="stylesheet" />
+</head>
+	<body>
+
+		<div class="shop_style f_32">
+			<div id="wrapper" class="mui-scroll-wrapper">
+				<ul class="left">
+					<li class="act">狗粮</li>
+					<li>猫粮</li>
+					<li>猪食</li>
+					<li>狗粮</li>
+					<li>猪食</li>
+					<li>狗粮</li>
+					<li>猫粮</li>
+					<li>猪食</li>
+					<li>狗粮</li>
+					<li>猪食</li>
+					<li>狗粮</li>
+					<li>猫粮</li>
+					<li>猪食</li>
+					<li>狗粮</li>
+					<li>猪食</li>
+					<li>狗粮</li>
+					<li>猫粮</li>
+					<li>猪食</li>
+				</ul>
+			</div>
+			
+			<div id="wrapper2" style="left: 8rem;" class="mui-scroll-wrapper">
+				<ul class="right">
+					<li>狗粮</li>
+					<li>猫粮</li>
+					<li>猪食</li>
+					<li>狗粮</li>
+					<li>猫粮</li>
+					<li>猪食</li>
+					<li>狗粮</li>
+					<li>猫粮</li>
+				</ul>
+			</div>
+			
+			
+		</div>
+		
+		<script type="text/javascript">
+		
+			window.onload = function(){
+				var Scroll = new IScroll ('#wrapper',{hScroll:false,hScrollbar:false, vScrollbar:false});
+				var Scroll2 = new IScroll ('#wrapper2',{hScroll:false,hScrollbar:false, vScrollbar:false});
+				
+				var wrapper = document.getElementById("wrapper");
+				var wrapper2 = document.getElementById("wrapper2");
+				var list = wrapper.getElementsByTagName("li");
+				var list2 = wrapper2.getElementsByTagName("li");
+				
+				selectSigle(list);
+				selectSigle(list2);
+			}
+		</script>
+	</body>
+</html>

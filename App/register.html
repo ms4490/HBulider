@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=.5,minimum-scale=.5,maximum-scale=.5,user-scalable=no" />
+    <title>注册</title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/sha.js"></script>
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/register.css" rel="stylesheet" />
+</head>
+	<body>
+		<ul class="register">
+			<li>
+				<span class="icons_phone"></span>
+				<span class="line"></span>
+				<input onkeyup="checkInput()" id="tel" class="f_32" style="width: 8rem;" type="tel" placeholder="输入手机号" />
+				<span id="getCode" class="get_captcha f_28">获取验证码</span>
+			</li>
+			<li>
+				<span class="icons_message"></span>
+				<span class="line"></span>
+				<input onkeyup="checkInput()" id="captcha" class="f_32" type="number" placeholder="输入短信验证码" />
+			</li>
+			<li>
+				<span class="icons_set_password"></span>
+				<span class="line"></span>
+				<input onkeyup="checkInput()" id="password" class="f_32" type="password" placeholder="设置密码" />
+			</li>
+		</ul>
+		
+		<div id="sendPost" type="0" class="btn f_32">立即注册</div>
+		
+		<span id="toLogin" class="link f_32">已有账号？马上登录</span>
+		
+		<script src="js/data.js"></script>
+		<script src="js/register.js"></script>
+		<script type="text/javascript">
+			
+			var mobileCheck = /^0?(13[0-9]|15[0-9]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/;
+			var smsVerifyCode = null;
+			
+			getCode.addEventListener("touchend",sendPhoneNum,false);
+			
+			//获取验证码
+			function sendPhoneNum(){
+				var num = 60;
+				var timer = null;
+				var dateTime = new Date();
+				var y = dateTime.getFullYear();
+				var m = dateTime.getMonth()+1;
+				var d = dateTime.getDate();
+
+				if( m < 10)
+				{
+					m = "0"+m;
+				}
+				
+				if(d < 10)
+				{
+					d = "0"+d;
+				}
+				
+				var signature = hex_sha1('687f5dc727d64449babbe786874f8638'+String(y)+String(m)+String(d));
+				
+				if(phoneNum.value == "")
+				{
+					mui.toast("请输入手机号码");
+				}
+				else if(!mobileCheck.test(phoneNum.value))
+				{
+					mui.toast("请输入正确的手机号码");
+				}
+				else
+				{
+					if(situation == 0)
+					{
+						situation = 1;
+
+						mui.ajax(mainLink+linkForCaptcha,{
+							data:{
+								phone:phoneNum.value,
+								signature:signature
+							},
+							dataType:'json',
+							type:'post',
+							success:function(data){
+								if(data.code == '101')
+								{
+									mui.toast(data.message);
+								}
+								else
+								{
+									mui.toast(data.smsVerifyCode);
+									smsVerifyCode = data.smsVerifyCode;
+								}
+							},
+							error:function(data){
+								mui.toast(message);
+							}
+						})
+						
+						getCode.style.background = "#A7A7A7";
+						getCode.innerHTML = "重新获取("+num+")";
+						
+						timer =setInterval(function(){
+							num--
+							getCode.innerHTML = "重新获取("+num+")";
+							if( num == 0)
+							{
+								clearInterval(timer);
+								getCode.style.background = "#43A854";
+								getCode.innerHTML = "获取验证码";
+								situation = 0;
+							}
+						},1000);
+					}
+				}
+				
+			}
+			
+			//注册
+			sendBtn.addEventListener("tap",function(){
+				if(sendBtn.getAttribute("type") == 0) return;
+				
+				var loginPass = hex_sha1(passwordVal.value);
+				mui.ajax(mainLink+linkForRegister,{
+					data:{
+						phone:phoneNum.value,
+						smsVerifyCode:smsVerifyCode,
+						loginPass:loginPass,
+					},
+					dataType:'json',
+					type:'post',
+					success:function(data){
+						if(data.code == '101' || data.code == '104')
+						{
+							mui.toast(data.message);
+						}
+						else
+						{
+							console.log("账号ID："+data.accountId+"缓存："+data.session+"店铺ID："+data.shopId);
+							mui.toast("注册成功！");
+							plus.webview.close("registerFrame");
+							plus.webview.show("mainFrame","slide-in-right");
+						}
+					},
+					error:function(data){
+						mui.toast(message);
+					}
+				});
+			},false);
+		</script>
+	</body>
+</html>

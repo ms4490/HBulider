@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=.5,minimum-scale=.5,maximum-scale=.5,user-scalable=no" />
+    <title>店铺资料</title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/shopInfo.css" rel="stylesheet" />
+</head>
+	<body>
+
+		<ul class="shop_Info f_28 gray_7">
+			<li class="logo">
+				<label for="inputImg">
+					<span class="tit f_32">店铺LOGO</span>
+					<img id="imgSrc" src="#" />
+					<input style="display: none;" id="inputImg" type="file" />
+				</label>
+			</li>
+			<li id="toChangeShopName" class="normal">
+				<span class="tit f_32">店铺名</span>
+				<span class="icon_right right"></span>
+				<p id="shopName">不好吃饭店</p>
+			</li>
+			<li class="normal">
+				<span class="tit f_32">地址</span>
+				<span class="icon_right right"></span>
+				<p id="shopAddress">广东广州人民公厕旁边</p>
+			</li>
+			<li id="toShopStyle" class="normal">
+				<span class="tit f_32">餐厅类型</span>
+				<span class="icon_right right"></span>
+				<p id="shopType">专营各类狗粮（优质狗粮，不买也要看一下）</p>
+			</li>
+			<li class="normal">
+				<span class="tit f_32">餐厅介绍</span>
+				<span class="icon_right right"></span>
+				<p id="shopIntro">不好吃饭店一次让你爽歪歪</p>
+			</li>
+			<li id="showQR" class="normal">
+				<span class="tit f_32">二维码</span>
+				<span class="icon_barcode right2"></span>
+			</li>
+		</ul>
+		
+		<ul class="shop_Info f_28 gray_7">
+			<li class="normal">
+				<span class="tit f_32">菜单分类</span>
+				<span class="icon_right right"></span>
+				<p id="muenClass">狗粮、猫粮、猪食</p>
+			</li>
+			<li class="normal">
+				<span class="tit f_32">店铺装修</span>
+				<span class="icon_right right"></span>
+				<p>自定义菜单</p>
+			</li>
+		</ul>
+		
+		<div id="shadow_layer"></div>
+		
+		<div id="hoverLayer" class="QRcode">
+			<img src="#" />
+		</div>
+		
+		<script type="text/javascript">
+		
+			window.onload = function(){
+				
+				var toChangeShopName = document.getElementById("toChangeShopName");
+				var toShopStyle = document.getElementById("toShopStyle");
+				var showQR = document.getElementById("showQR");
+				
+				showQR.addEventListener("touchend",function(){
+					var shadow_layer = document.getElementById("shadow_layer");
+					var hoverLayer = document.getElementById("hoverLayer");
+					
+				},false);
+				
+				function touchLink(obj,url){
+					obj.addEventListener('touchend',function(){
+						plus.webview.show(url,'slide-in-right');
+					},false);
+				}
+				
+				touchLink(toShopStyle,'shopStyleFrame');
+				
+			}
+		</script>
+	</body>
+</html>

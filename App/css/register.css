@@ -1,0 +1,16 @@
+.register { margin: .5rem 0;}
+.register li { height: 2.2rem; line-height: 2.2rem; background: #fff; position: relative;}
+.register li:after { content: ""; height: 1px; width: 100%; position: absolute; left: 0; bottom: 0; background: #ddd;}
+.register li:last-child { border-bottom: none;}
+.register li input { width: 12.25rem; color: #C1C1C1; float: left; height: 1rem; line-height: 1rem; padding: .6rem 0;}
+.register .line { float: left; width: 1px; height: .8rem; margin: .7rem .45rem .7rem .4rem; background: #c1c1c1;}
+.register .get_captcha { width: 4.25rem; height: 1.65rem; line-height: 1.65rem; margin: .275rem .5rem 0 0; background: #43A854; border-radius: 8px; color: #fff; float: right; text-align: center;}
+
+.icons_phone { width: 1.2rem; height: 1.2rem; float: left; background: url(../images/icons/icon_phone_register.png) no-repeat; background-size: 100% 100%; margin: .4rem 0 0 .5rem;}
+.icons_message { width: 1.2rem; height: 1.2rem; float: left; background: url(../images/icons/icon_mail_register.png) no-repeat; background-size: 100% 100%; margin: .4rem 0 0 .5rem;}
+.icons_set_password { width: 1.2rem; height: 1.2rem; float: left; background: url(../images/icons/icon_key_register.png) no-repeat; background-size: 100% 100%; margin: .4rem 0 0 .5rem;}
+.icons_check_password { width: 1.2rem; height: 1.2rem; float: left; background: url(../images/icons/icon_confirm_key_register.png) no-repeat; background-size: 100% 100%; margin: .4rem 0 0 .5rem;}
+
+.btn { width: 15rem; margin: 0 auto; height: 2.2rem; line-height: 2.2rem; border-radius: 8px; background: #A7A7A7; text-align: center;color: #fff;}
+.link { text-align: right; display: block; color: #7ecef4; margin: .6rem .5rem 0 0;}
+	

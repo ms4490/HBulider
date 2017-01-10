@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=.5,minimum-scale=.5,maximum-scale=.5,user-scalable=no" />
+    <title>登录</title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/login.css" rel="stylesheet" />
+    <script src="js/sha.js"></script>
+</head>
+	<body style="background: #398ECA;">
+		<div class="logo">
+			<img src="#" />
+		</div>
+		
+		<form>
+			<div class="input_box">
+				<div style="margin-top: 0.57rem;">
+					<img src="images/icons/icon_profile_Login.png" />
+					<span class="separate"></span>
+					<input id="account" class="f_28" type="text" placeholder="用户名/手机号" />
+				</div>
+				<div class="line"></div>
+				<div>
+					<img src="images/icons/icon_key_Login.png" />
+					<span class="separate"></span>
+					<input id="password" class="f_28" type="password" placeholder="密码" />
+					<img id="hide" class="password_hide" src="images/icons/icon_chakan.png" />
+					<img id="show" class="password_show" src="images/icons/icon_chakan_proint.png" />
+				</div>
+			</div>
+			
+			<span id="toMain" class="login_submit">登录</span>
+		</form>
+		
+		<div class="links">
+			<a style="color: #b2d2ea;" class="f_28" href="#">忘记密码？</a>
+			<a id="toRegsiter" class="f_28">立即注册》</a>
+		</div>
+		
+		<div class="weChat_login">
+			<img src="images/icons/icon_weixin_Login.png" />
+			<p class="f_28">微信快捷登录</p>
+		</div>
+		
+		<script src="js/login.js"></script>
+		<script src="js/data.js"></script>
+		<script type="text/javascript">
+			//事件监听
+			document.addEventListener("plusready",plusReady,false);
+			function plusReady(){
+				//初始化页面
+				plus.webview.create("mainFrame.html","mainFrame");
+			    plus.webview.create('accountSettingFrame.html','accountSettingFrame');
+			    plus.webview.create('shopInfoFrame.html','shopInfoFrame');
+			    plus.webview.create('shopStyleFrame.html','shopStyleFrame');
+			    plus.webview.create('registerFrame.html',"registerFrame");
+			    plus.webview.create('cuisinesManage.html',"cuisinesManage");
+			    
+				plus.navigator.closeSplashscreen();
+			}
+			  	
+			var toRegsiter = document.getElementById("toRegsiter");
+			var toMain = document.getElementById("toMain");
+			var accountV = document.getElementById("account");
+			var passwordV = document.getElementById("password");
+			
+			//注册页面
+			toRegsiter.addEventListener("tap",function(){
+				plus.webview.show("registerFrame",'slide-in-right',200);
+				plus.webview.close("login","slide-out-left",300);
+				plus.webview.create("login.html","login");
+			},false);
+			
+			//登录ajax
+			toMain.addEventListener("tap",function (){
+				var shaPassword = hex_sha1(passwordV.value);
+				/*mui.openWindow({
+					url:'mainFrame.html',
+					id:'mainFrame',
+					show:{
+					  autoShow:true,
+					  aniShow:'slide-in-right'
+					}
+				});*/
+				if(accountV.value == "")
+				{
+					mui.toast("账号不能为空");
+				}
+				else if(passwordV.value == "")
+				{
+					mui.toast("密码不能为空");
+				}
+				else
+				{
+					
+					plus.nativeUI.showWaiting();
+					mui.ajax(mainLink+linkForLogin,{
+						data:{
+							loginName:accountV.value,
+							loginPass:shaPassword
+						},
+						dataType:'json',
+						type:'post',
+						success:function(data){			
+							if(data.code == '101' || data.code == '104')
+							{
+								mui.toast(data.message);
+							}
+							else
+							{
+								plus.nativeUI.closeWaiting()
+								var accountId = JSON.stringify(data.accountId);
+								var session = JSON.stringify(data.session);
+								var shopId = JSON.stringify(data.shopId);
+								plus.storage.setItem("login_accountId",accountId);
+								plus.storage.setItem("login_session",session);
+								plus.storage.setItem("login_shopId",shopId);
+								console.log(plus.storage.getItem("login_accountId")+"-"+plus.storage.getItem("login_session")+"-"+plus.storage.getItem("login_shopId"));
+								plus.webview.close("login","slide-out-left",300);
+								plus.webview.show("mainFrame","slide-in-right",200);
+							}
+						},
+						error:function(data){
+							mui.toast(message);
+						}
+					});
+				}
+			},false);
+				
+		</script>
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=.5,minimum-scale=.5,maximum-scale=.5,user-scalable=no" />
+    <title>账号设置</title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/common2.css" rel="stylesheet" />
+</head>
+	<body>
+
+		<div class="account_setting">
+			<div id="toAccountChange" class="account f_30">
+				<span class="tit">账号</span>
+				<span class="name gray_7">用户名</span>
+			</div>
+			
+			<ul class="bind_box f_30">
+				<li><span class="tit gray_7">绑定设置</span></li>
+				<li id="toPhoneBinding">
+					<span class="icon_mobile"></span>
+					<span class="tit">手机绑定</span>
+					<span class="name gray_7">13245678912</span>
+				</li>
+				<li id="toWeChatBinding">
+					<span class="icon_weChat"></span>
+					<span class="tit">微信绑定</span>
+					<span class="name unbind">未绑定</span>
+				</li>
+			</ul>
+				
+			<ul class="bind_box f_30">
+				<li><span class="tit gray_7">安全设置</span></li>
+				<li id="toPasswordChange">
+					<span class="tit">登录密码</span>
+					<span class="name unbind">修改</span>
+				</li>
+			</ul>
+				
+			<div id="toLogin" class="logout f_30">退出登录</div>
+		</div>
+		
+		<script type="text/javascript">
+		
+			window.onload = function(){
+				var toLogin = document.getElementById("toLogin");
+				var toAccountChange = document.getElementById("toAccountChange");
+				var toPasswordChange = document.getElementById("toPasswordChange");
+				
+				toAccountChange.addEventListener("tap",function(){
+					plus.webview.show('accountChangeFrame','slide-in-right');
+				},false);
+				
+				toPasswordChange.addEventListener("tap",function(){
+					plus.webview.show('passwordChangeFrame','slide-in-right');
+				},false);
+				
+				toLogin.addEventListener("tap",function(){
+					plus.storage.clear();
+					plus.webview.close('accountSettingFrame','slide-out-top',400);					
+					plus.webview.create("login.html","login").show("slide-in-bottom",300);
+				},false);
+				
+			}
+		</script>
+	</body>
+</html>

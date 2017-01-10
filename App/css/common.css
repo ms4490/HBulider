@@ -1,0 +1,33 @@
+body { background: #EFEFF4; color: #000; font-family: Helvetica;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{ margin:0; padding:0;}
+img { width:100%; height:100%; border:0;}
+li{ list-style:none;}
+h1,h2,h3,h4,h5,h6,p { font-weight:normal; line-height: 100%;}
+input,textarea,select{ font-family:inherit; font-size:inherit; font-weight:inherit; border:none; background:inherit; -webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-appearance: none;}
+a{ text-decoration:none; color:#000; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+a:hover,a:focus{ text-decoration:none;}
+strong{ font-weight:bold;}
+input,button,select,textarea{ outline:none;}
+input::-webkit-input-placeholder { color: #ccc;}
+
+/*共用头部*/
+.common_header { width: 100%; height: 2.2rem; background: #398DC9; position: relative; text-align: center; color: #fff; z-index: 10;}
+.common_header h1 { font-size: .9rem; line-height: 2.2rem;}
+.icon_back { width: 1.2rem; height: 1.2rem; position: absolute; top: .5rem; left: .5rem; background: url(../images/icons/icon_back_nor.png) no-repeat; background-size: 100% 100%;}
+.icon_main_setting { width: .8rem; height: .8rem; background: url(../images/icons/icon_setting_home_page_nor.png) no-repeat center; background-size: 36.36% 36.36%; position: absolute; right: 0; top: 0; padding: .7rem;}
+
+/*共用样式*/
+.common_frame { margin-top: 2.2rem; overflow: hidden;}
+#shadow_layer { width: 100%; height: 100%; background: #000; opacity: .5; position: fixed; top: 0; left: 0; z-index: 100; display: none;}
+.gray_7 { color: #a7a7a7;}
+.gray_5 { color: #e5e5e5;}
+.f_24 { font-size: .6rem;}
+.f_28 { font-size: .7rem;}
+.f_30 { font-size: .75rem;}
+.f_32 { font-size: .8rem;}
+.f_36 { font-size: .9rem;}
+.icon_right { width: .65rem; height: .95rem; background: url(../images/icons/icon_enter_setting.png) no-repeat; background-size: 100% 100%; display: inline-block;}
+.icon_barcode { width: 1.2rem; height: 1.2rem; background: url(../images/icons/icon_storedata_ewm.png) no-repeat; background-size: 100% 100%; display: inline-block;}
+.icon_unchecked { width: 1.2rem; height: 1.2rem; background: url(../images/icons/icon_check_nor.png) no-repeat; background-size: 100% 100%; display: inline-block;}
+.icon_checked { width: 1.2rem; height: 1.2rem; background: url(../images/icons/icon_check_pre.png) no-repeat; background-size: 100% 100%; display: inline-block;}
+.list_fix { height: 2.2rem;}

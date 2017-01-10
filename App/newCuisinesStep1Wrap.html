@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新增菜式-输入菜名-外层</title>
+		<meta name="viewport" content="width=device-width,initial-scale=.5,minimum-scale=.5,maximum-scale=.5,user-scalable=no" />
+	    <script src="js/mui.min.js"></script>   
+	    <script src="js/common.js"></script>
+	    <script src="js/iscroll.js"></script>
+	    <link type="text/css" href="css/common.css" rel="stylesheet" />
+	    <link type="text/css" href="css/cuisines.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div id="nav" class="common_header">
+			<span class="icon_back"></span>
+			<h1>新增菜式</h1>
+			<span style="width: 3.875rem;" class="add_new_cuisines f_28">批量创建</span>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var nav = document.getElementById("nav");
+				var height = nav.offsetHeight/2;
+				
+				mui.plusReady(function(){
+				     mui.init({
+					    subpages:[{
+					      url:'newCuisinesStep1.html',
+					      id:'newCuisinesStep1',
+					      styles:{
+					      	top: height
+					      }
+					    }]
+				  	});
+				});
+				
+				nav.getElementsByTagName("span")[0].addEventListener("tap",function(){
+					plus.webview.close('newCuisinesStep1Wrap','slide-out-right');
+					plus.webview.create('newCuisinesStep1Wrap.html','newCuisinesStep1Wrap');
+				},false)
+			}
+		</script>
+	</body>
+</html>

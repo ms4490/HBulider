@@ -1,0 +1,16 @@
+.main_header { height: 10.75rem; background: #fff; overflow: hidden;}
+.img_box { margin-top: .9rem; height: 4.125rem;}
+.img_box img { width: 4.125rem; height: 4.125rem; display: block; margin: 0 auto; border: #e5e5e5 1px solid; border-radius: 50%;}
+.name { text-align: center; margin-top: .65rem;}
+.name h1 { font-weight: 700;}
+.name p { margin-top: .25rem;}
+.data_list { overflow: hidden; margin-top: 1.1rem;}
+.data_list li { width: 33.3%; float: left; box-sizing: border-box; border-right: #e5e5e5 1px solid; text-align: center;}
+.data_list li:last-child { border: none;}
+.data_list li h1 { margin-bottom: .25rem;}
+.main_options { overflow: hidden; margin-top: .15rem;}
+.main_options li { float: left; background: #fff; width: 6.425rem; height: 2.575rem; padding: 1.175rem 0 0 1.5rem; margin-bottom: .15rem;}
+.main_options li:nth-child(2n-1) { margin-right: .15rem;}
+.main_options li img { width: 1.4rem; height: 1.4rem; display: block; float: left;}
+.main_options .box { float: left; margin-left: .6rem;}
+.main_options .box h1 { margin-bottom: .2rem;}

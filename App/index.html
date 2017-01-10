@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=.5,minimum-scale=.5,maximum-scale=.5,user-scalable=no" />
+    <title>启动页</title>
+    <script src="js/mui.min.js"></script>
+</head>
+	<body style="background: #398ECA;">
+		<script type="text/javascript">
+		
+				mui.plusReady(function(){
+					if(plus.storage.getItem("login_session") == null)
+					{
+						plus.webview.open("login.html","login");
+					}
+					else
+					{
+						plus.webview.open("mainFrame.html","mainFrame");
+					    plus.webview.create('accountSettingFrame.html','accountSettingFrame');
+					    plus.webview.create('shopInfoFrame.html','shopInfoFrame');
+					    plus.webview.create('shopStyleFrame.html','shopStyleFrame');
+					    plus.webview.create("cuisinesManage.html","cuisinesManage");
+					}
+				});
+		</script>
+	</body>
+</html>

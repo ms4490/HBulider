@@ -1,0 +1,11 @@
+.shop_Info { margin-top: .425rem; background: #fff;}
+.shop_Info .normal { height: 2.175rem; line-height: 2.175rem; overflow: hidden; border-bottom: #E5E5E5 1px solid;}
+.shop_Info .normal p { height: 2.175rem; line-height: 2.175rem; width: 8.9rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; float: right; text-align: right;}
+.shop_Info .normal .right { margin: .6125rem .5rem .6125rem .45rem; float: right;}
+.shop_Info .normal .right2 { margin: .4875rem .5rem; float: right;}
+.shop_Info .logo { height: 4.4rem; line-height: 4.4rem; border-bottom: #E5E5E5 1px solid;}
+.shop_Info .logo label { display: block; height: 4.4rem; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+.shop_Info .logo img { width: 3.5rem; height: 3.5rem; display: block; float: right; margin: .45rem;}
+.shop_Info .tit { width: 4rem; float: left; color: #010101; margin-left: .5rem;}
+.QRcode { position: fixed; width: 12.5rem; height: 12.5rem; top: 6.355rem; left: 1.75rem; background: #fff; display: none;}
+.QRcode img { width: 8.55rem; height: 8.55rem; display: block; margin: 1.975rem;}

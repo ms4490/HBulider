@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=.5,minimum-scale=.5,maximum-scale=.5,user-scalable=no" />
+    <title>账号设置-外层</title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/common2.css" rel="stylesheet" />
+</head>
+	<body>
+		<div id="nav" class="common_header">
+			<span class="icon_back"></span>
+			<h1>账号设置</h1>
+		</div>
+		
+	
+		<script>
+			window.onload = function(){
+				var nav = document.getElementById("nav");
+				var height = nav.offsetHeight/2;
+				
+				mui.plusReady(function(){
+				     mui.init({
+					    subpages:[{
+					      url:'accountSetting.html',
+					      id:'accountSetting',
+					      styles:{
+					      	top: height
+					      }
+					    }]
+				  	});
+				  	plus.webview.create('passwordChangeFrame.html','passwordChangeFrame');
+				  	plus.webview.create('accountChangeFrame.html','accountChangeFrame');
+				});
+								
+				nav.getElementsByTagName("span")[0].addEventListener("tap",function(){
+					mui.back();
+				},false)
+			}
+		</script>
+	</body>
+</html>

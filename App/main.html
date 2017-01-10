@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=.5,minimum-scale=.5,maximum-scale=.5,user-scalable=no" />
+    <title>主界面</title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="main_header">
+		<div class="img_box">
+			<img src="#" />
+		</div>
+		<div class="name">
+			<h1 class="f_28">不好吃饭店</h1>
+			<p class="f_24 gray_7">访问量：0000000</p>
+		</div>
+		<ul class="data_list">
+			<li>
+				<h1 class="f_24">00000</h1>
+				<p class="gray_7 f_24">今日浏览量</p>
+			</li>
+			<li>
+				<h1 class="f_24">00000</h1>
+				<p class="gray_7 f_24">访客</p>
+			</li>
+			<li>
+				<h1 class="f_24">00000</h1>
+				<p class="gray_7 f_24">平均访问量</p>
+			</li>
+		</ul>
+	</div>
+	
+	<ul class="main_options">
+		<li id="toCuisinesManage">
+			<a href="#">
+				<img src="images/icons/icon_main_1.png" />
+				<div class="box">
+					<h1 class="f_28">菜式管理</h1>
+					<p class="f_24 gray_7">商家及时管理</p>
+				</div>
+			</a>
+		</li>
+		<li id="toComboManage">
+			<a href="#">
+				<img src="images/icons/icon_main_2.png" />
+				<div class="box">
+					<h1 class="f_28">套餐管理</h1>
+					<p class="f_24 gray_7">新搭配新菜式</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="images/icons/icon_main_3.png" />
+				<div class="box">
+					<h1 class="f_28">推荐设置</h1>
+					<p class="f_24 gray_7">汇集最棒菜式</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<img src="images/icons/icon_main_4.png" />
+			<div class="box">
+				<h1 class="f_28">食材管理</h1>
+				<p class="f_24 gray_7">增添更换食材</p>
+			</div>
+		</li>
+		<li id="toShopInfo">
+			<img src="images/icons/icon_main_5.png" />
+			<div class="box">
+				<h1 class="f_28">店铺管理</h1>
+				<p class="f_24 gray_7">轻松管理店铺</p>
+			</div>
+		</li>
+		<li>
+			<a href="#">
+				<img src="images/icons/icon_main_6.png" />
+				<div class="box">
+					<h1 class="f_28">店铺统计</h1>
+					<p class="f_24 gray_7">查看最新统计</p>
+				</div>
+			</a>
+		</li>
+	</ul>
+	
+</body>
+
+<script src="js/data.js"></script>
+<script type="text/javascript">
+	
+	var toShopInfo = document.getElementById("toShopInfo");
+	var toCuisinesManage = document.getElementById("toCuisinesManage");
+	
+	//店铺管理
+	toShopInfo.addEventListener('tap',function(){
+		var shopId = JSON.parse(plus.storage.getItem("login_shopId"));
+		var session = JSON.parse(plus.storage.getItem("login_session"));
+		/*mui.ajax(mainLink+linkForShopInfo,{
+			data:{
+				shopId: shopId,
+				session: session
+			},
+			dataType:'json',
+			type:'post',
+			success:function(data){
+				//进度标记  店铺管理数据拉取
+				console.log(data.shopInfo.id);
+				var data = JSON.stringify(data);
+				console.log(data.message);
+				
+				console.log(data);
+				
+				
+			}
+		});*/
+		plus.webview.show('shopInfoFrame','slide-in-right',200);
+		plus.webview.hide('mainFrame','slide-out-left',300);
+	},false);
+	
+	//菜式管理
+	toCuisinesManage.addEventListener("tap",function(){
+		plus.webview.show('cuisinesManage','slide-in-right',200);
+		plus.webview.hide('mainFrame','slide-out-left',300);
+	},false);
+	
+	//事件监听
+	document.addEventListener("plusready",plusReady,false);
+	function plusReady(){
+		plus.navigator.closeSplashscreen();
+	}
+	
+</script>
+</html>

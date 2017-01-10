@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=.5,minimum-scale=.5,maximum-scale=.5,user-scalable=no" />
+	    <title>菜式管理</title>
+	    <script src="js/mui.min.js"></script>   
+	    <script src="js/common.js"></script>
+	    <script src="js/iscroll.js"></script>
+	    <link type="text/css" href="css/common.css" rel="stylesheet" />
+	    <link type="text/css" href="css/cuisines.css" rel="stylesheet" />
+	</head>
+	<body style="background: #fff;">
+		<div id="nav" class="common_header">
+			<span class="icon_back"></span>
+			<h1>菜式管理</h1>
+			<span id="toNewCuisinesStep1" class="add_new_cuisines f_28">新增</span>
+		</div>
+		
+		<script type="text/javascript">
+		
+			var nav = document.getElementById("nav");
+			
+			nav.getElementsByTagName("span")[0].addEventListener("tap",function(){
+				plus.webview.close("cuisinesManage","slide-out-right",300);
+				plus.webview.create("cuisinesManage.html","cuisinesManage");
+				plus.webview.show('mainFrame','slide-in-left',200);
+			},false);
+		</script>
+		
+		<div id="nav2" class="top_nav f_32">
+			<div id="type1">
+				<img id="btn1" src="images/icons/icon_csgl_filter_pre.png" />
+				<ul id="chooseList" class="select_box">
+					<li class="act">在线</li>
+					<li>售完</li>
+					<li>下架</li>
+				</ul>
+			</div>
+			<div id="type2" style="display: none;">
+				<img id="btn2" src="images/icons/icon_dishmanagement_change_pre.png" />
+				<ul class="select_box2">
+					<li id="eatShow">食材<img src="images/icons/icon_dropdown.png" /></li>
+					<li id="shopShow">店内分类<img src="images/icons/icon_dropdown.png" /></li>
+				</ul>
+			</div>
+			
+			<!---------- 筛选层 ---------->
+			<div id="wrapper2" class="hover_list1">
+				<ul id="chooseList2" class="list">
+					<li class="act">人肉寿司</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+				</ul>
+			</div>
+			
+			<div id="wrapper3" class="hover_list2">
+				<ul id="listOption" class="list">
+					<li class="act">人肉寿司</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+					<li>爆浆牛蛋</li>
+				</ul>
+			</div>
+			
+			<div id="wrapper4" class="hover_list3">
+				<ul class="list2">
+					<li>人肉类</li>
+					<li>人肉类</li>
+					<li>人肉类</li>
+					<li>人肉类</li>
+					<li>人肉类</li>
+					<li>人肉类</li>
+					<li>人肉类</li>
+					<li>人肉类</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!---------- 筛选层 ---------->
+		<div id="shadow_layer"></div>
+		
+		<div style="position: fixed; width: 100%;" id="wrapper">
+			<ul id="selectList" class="cuisines_list">
+				<li>
+					<div role="1" class="icon_checked i_check"></div>
+					<img src="#" />
+					<div class="edit_box f_32 gray_7">编辑</div>
+					<h1 class="f_32">番茄炒西红柿1</h1>
+					<h2 class="f_32"><span class="f_24">￥</span>36/<span class="f_24">46</span></h2>
+				</li>
+				<li>
+					<div role="0" class="icon_unchecked i_check"></div>
+					<img src="#" />
+					<div class="edit_box f_32 gray_7">编辑</div>
+					<h1 class="f_32">番茄炒西红柿2</h1>
+					<h2 class="f_32"><span class="f_24">￥</span>36/<span class="f_24">46</span></h2>
+				</li>
+				<li>
+					<div role="0" class="icon_unchecked i_check"></div>
+					<img src="#" />
+					<div class="edit_box f_32 gray_7">编辑</div>
+					<h1 class="f_32">番茄炒西红柿3</h1>
+					<h2 class="f_32"><span class="f_24">￥</span>36/<span class="f_24">46</span></h2>
+				</li>
+				<li>
+					<div role="0" class="icon_unchecked i_check"></div>
+					<img src="#" />
+					<div class="edit_box f_32 gray_7">编辑</div>
+					<h1 class="f_32">番茄炒西红柿4</h1>
+					<h2 class="f_32"><span class="f_24">￥</span>36/<span class="f_24">46</span></h2>
+				</li>
+				<li>
+					<div role="0" class="icon_unchecked i_check"></div>
+					<img src="#" />
+					<div class="edit_box f_32 gray_7">编辑</div>
+					<h1 class="f_32">番茄炒西红柿5</h1>
+					<h2 class="f_32"><span class="f_24">￥</span>36/<span class="f_24">46</span></h2>
+				</li>
+				<li>
+					<div role="0" class="icon_unchecked i_check"></div>
+					<img src="#" />
+					<div class="edit_box f_32 gray_7">编辑</div>
+					<h1 class="f_32">番茄炒西红柿6</h1>
+					<h2 class="f_32"><span class="f_24">￥</span>36/<span class="f_24">46</span></h2>
+				</li>
+				<li>
+					<div role="0" class="icon_unchecked i_check"></div>
+					<img src="#" />
+					<div class="edit_box f_32 gray_7">编辑</div>
+					<h1 class="f_32">番茄炒西红柿7</h1>
+					<h2 class="f_32"><span class="f_24">￥</span>36/<span class="f_24">46</span></h2>
+				</li>
+			</ul>
+		</div>
+
+		<div id="bottom" class="bottom_option f_28">
+			<div id="allBtn" role="0" class="all"><span class="icon_unchecked i_check_all"></span>全选</div>
+			<span id="classifyBtn" class="btn">分类</span>
+			<span class="btn">售完</span>
+			<span class="btn">下架</span>
+			<span id="deleteBtn" class="btn" style="color: #FF5F3E; margin-right: 0;">删除</span>
+		</div>
+		
+		<script type="text/javascript">
+			var cl = document.getElementById("chooseList");
+			var clLi = cl.getElementsByTagName("li");
+			var sl = document.getElementById("selectList");
+			var slLi = sl.getElementsByTagName("li");
+			var btn1 = document.getElementById("btn1");
+			var btn2 = document.getElementById("btn2");
+			var type1 = document.getElementById("type1");
+			var type2 = document.getElementById("type2");
+			var eatShow = document.getElementById("eatShow");
+			var shopShow = document.getElementById("shopShow");
+			var chooseList2 = document.getElementById("chooseList2");
+			var chooseList2Li = chooseList2.getElementsByTagName("li");
+			var shadow_layer = document.getElementById("shadow_layer");
+			var wrapper2 = document.getElementById("wrapper2");
+			var wrapper3 = document.getElementById("wrapper3");
+			var wrapper4 = document.getElementById("wrapper4");
+			var classifyBtn = document.getElementById("classifyBtn");
+			var deleteBtn = document.getElementById("deleteBtn");
+			
+			//筛选按钮
+			btn1.addEventListener("tap",function(){
+				type1.style.display = "none";
+				type2.style.display = "block";
+			},false);
+			btn2.addEventListener("tap",function(){
+				type1.style.display = "block";
+				type2.style.display = "none";
+			},false);
+			
+			//层筛选展示按钮
+			eatShow.addEventListener("tap",function(){
+				this.setAttribute("class","act");
+				shopShow.setAttribute("class","");
+				wrapper2.style.display = "block";
+				wrapper3.style.display = "block";
+				wrapper4.style.display = "none";
+				shadow_layer.style.display = "block";
+				
+				var mySrcoll2 = new IScroll ('#wrapper2',{hScroll:false,hScrollbar:false,vScrollbar:false});
+				var mySrcoll3 = new IScroll ('#wrapper3',{hScroll:false,hScrollbar:false,vScrollbar:false});
+			},false);
+			
+			shopShow.addEventListener("tap",function(){
+				this.setAttribute("class","act");
+				eatShow.setAttribute("class","");
+				wrapper2.style.display = "none";
+				wrapper3.style.display = "none";
+				wrapper4.style.display = "block";
+				shadow_layer.style.display = "block";
+				
+				var mySrcoll4 = new IScroll ('#wrapper4',{hScroll:false,hScrollbar:false,vScrollbar:false});
+			},false);
+			
+			//筛选循环	
+			selectSigle(clLi);
+			selectSigle(chooseList2Li);
+			
+			//关闭筛选层
+			shadow_layer.addEventListener("tap",function(){
+				eatShow.setAttribute("class","");
+				shopShow.setAttribute("class","");
+				wrapper2.style.display = "none";
+				wrapper3.style.display = "none";
+				wrapper4.style.display = "none";
+				shadow_layer.style.display = "none";
+			},false);
+			
+			
+			//列表循环
+			for(var i = 0; i<slLi.length;i++)
+			{
+				slLi[i].getElementsByTagName("div")[0].addEventListener("tap",function(){
+					if(this.getAttribute("role") == 0)
+					{
+						this.setAttribute("role","1");
+						this.setAttribute("class","icon_checked i_check");
+					}
+					else
+					{
+						this.setAttribute("role","0");
+						this.setAttribute("class","icon_unchecked i_check");
+					}
+				},false);
+			}
+			
+			
+			var toNewCuisinesStep1 = document.getElementById("toNewCuisinesStep1");
+			toNewCuisinesStep1.addEventListener("tap",function(){
+				plus.webview.create("newCuisinesStep1Wrap.html","newCuisinesStep1Wrap");
+				plus.webview.show("newCuisinesStep1Wrap","slide-in-right",200);
+			},false);
+
+			//全选
+			allBtn.addEventListener("tap",function(){
+				if(this.getAttribute("role") == 0)
+				{
+					this.setAttribute("role","1");
+					this.getElementsByTagName("span")[0].setAttribute("class","icon_checked i_check_all");
+					for(var i = 0; i<slLi.length;i++)
+					{
+						slLi[i].getElementsByTagName("div")[0].setAttribute("role","1");
+						slLi[i].getElementsByTagName("div")[0].setAttribute("class","icon_checked i_check");
+					}
+				}
+				else
+				{
+					this.setAttribute("role","0");
+					this.getElementsByTagName("span")[0].setAttribute("class","icon_unchecked i_check_all");
+					for(var i = 0; i<slLi.length;i++)
+					{
+						slLi[i].getElementsByTagName("div")[0].setAttribute("role","0");
+						slLi[i].getElementsByTagName("div")[0].setAttribute("class","icon_unchecked i_check");
+					}
+				}
+			},false);
+
+			window.onload=function(){
+				var wHeight = document.getElementById("wrapper");
+				var nav2 = document.getElementById("nav2");
+				var bottom = document.getElementById("bottom");
+				
+				wHeight.style.height = window.screen.availHeight*2-(nav.offsetHeight+nav2.offsetHeight+bottom.offsetHeight)+"px";
+
+				var mySrcoll = new IScroll ('#wrapper',{hScroll:false,hScrollbar:false,vScrollbar:false});
+								
+
+				//批量删除
+				deleteBtn.addEventListener("tap",function(){
+					plus.nativeUI.showWaiting();	
+					plus.nativeUI.confirm("确认删除所选菜式？",function(e){				
+						if(e.index == 0)
+						{
+							var list = new Array();
+							var k = 0;
+							for(var i = 0; i<slLi.length;i++)
+							{
+								
+								if(slLi[i].getElementsByTagName("div")[0].getAttribute("role") == "1")
+								{
+									
+									list[k] = slLi[i];
+									k++
+								}
+							}
+							
+							for(var i = 0; i < k; i++)
+							{
+								sl.removeChild(list[i]);
+							}
+							
+							plus.nativeUI.closeWaiting();
+							mySrcoll.refresh();
+						}
+						else
+						{
+							plus.nativeUI.closeWaiting();
+						}
+					},"提示",["删除","取消"]);
+				},false);
+			}
+		</script>
+		
+	</body>
+</html>

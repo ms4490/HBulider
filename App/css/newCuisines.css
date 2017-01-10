@@ -1,0 +1,11 @@
+.bottom_block { height: 2.2rem;}
+.l_padding { padding-left: .5rem;}
+.step1_input_box { height: 2.2rem; border: #E5E5E5 1px solid; box-sizing: border-box; border-left: none; border-right: none; background: #fff;}
+.step1_input_box input { display: block; line-height: .8rem; height: .8rem; margin: .7rem 0;}
+.step1_ms { height: 2.2rem; line-height: 2.2rem; box-sizing: border-box; border-bottom: #E5E5E5 1px solid;}
+.step1_list { background: #fff; display: block;}
+.step1_list li { height: 2.2rem; line-height: 2.2rem; margin: 0 .5rem; border-bottom: #E5E5E5 1px solid; color: #000;}
+.step1_list li:last-child { border: none;}
+.step1_list li.act { background: #EFEFF4; position: relative; margin: 0; padding: 0 .5rem;}
+.step1_list li.act:before { content: ""; position: absolute; width: .2rem; height: 2.2rem; left: 0; background: #FF5F3E;}
+.step1_btn { height: 2.45rem; width: 100%; display: block; position: fixed; bottom: 2.2rem; background: #58ACE8; line-height: 2.45rem; text-align: center; color: #fff;}

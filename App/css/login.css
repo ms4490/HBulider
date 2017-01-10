@@ -1,0 +1,21 @@
+.logo { margin: 2.45rem 0 2.775rem;}
+.logo img { width: 3.75rem; height: 3.75rem; display: block; margin: 0 auto; border-radius: 50%;}
+.input_box { width: 13.075rem; height: 4.45rem; display: block; background: #4d9acf; border-radius: 8px; margin: 0 auto; overflow: hidden;}
+.input_box .line { width: 12.35rem; height: 1px; margin: .75rem auto; background: #efeff4;}
+.input_box input { width: 9.4rem; height: .9rem; line-height: .9rem; float: left; color: #b2d2ea;}
+.input_box input::-webkit-input-placeholder { color: #b2d2ea;}
+.input_box .separate { width: 1px; height: .75rem; float: left; background: #d2d2d2; margin: 0.075rem .3rem;}
+.input_box img { width: .9rem; height: .9rem; display: block; float: left;}
+.input_box>div { height: .9rem; margin-left: .85rem; position: relative;}
+.input_box img.password_hide { width: .9rem; height: .9rem; position: absolute; bottom: 0; right: .4rem;}
+.input_box img.password_show { width: .9rem; height: .9rem; position: absolute; bottom: 0; right: .4rem; display: none;}
+.login_submit { width: 13.075rem; height: 2.025rem; line-height: 2.025rem; text-align: center; color: #398eca; background: #fff; border-radius: 8px; display: block; margin: .75rem auto 0;}
+
+.links { width: 13.075rem; height: .7rem; margin: 1.125rem auto 0;}
+.links a { color: #fff;}
+.links a:nth-child(1) { float: left;}
+.links a:nth-child(2) { float: right;}
+
+.weChat_login { width: 13.075rem; height: 3.25rem; border: #5f9eca 1px solid; border-left: none; border-right: none; margin: 1.9rem auto;}
+.weChat_login img { width: 1.3rem; height: 1.3rem; margin: .4rem auto .5rem; display: block;}
+.weChat_login p { text-align: center; color: #fff;}

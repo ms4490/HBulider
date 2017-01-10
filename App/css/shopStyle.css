@@ -1,0 +1,13 @@
+.shop_style {}
+.shop_style .right { width: 8rem; height: auto; background: #fff;}
+.shop_style .left { width: 8rem; height: auto;}
+.shop_style .left li { padding-left: .75rem;}
+.shop_style .left li.act { background: #fff; position: relative;}
+.shop_style .left li.act:before { content: ""; width: .2rem; height: 2.2rem; position: absolute; left: 0; top: 0; background: #FF5F3E;}
+.shop_style .right li.act { background: url(../images/icons/icon_check_pre.png) no-repeat; background-position: right .5rem; background-size: 1.2rem;}
+.shop_style .right li { margin: 0 .5rem 0 .45rem; border-bottom: #E5E5E5 1px solid; position: relative; background: url(../images/icons/icon_check_nor.png) no-repeat; background-position: right .5rem; background-size: 1.2rem;}
+.shop_style .right li:last-child { border-bottom: #fff 1px solid;}
+.shop_style li { height: 2.2rem; line-height: 2.2rem; }
+.mui-scroll-wrapper,.mui-scroll-wrapper2 { position: fixed; top: 0; left: 0; height: 22.775rem;}
+.mui-scroll { position: absolute;}
+.icons_check { position: absolute; right: .5rem; top: .5rem;}

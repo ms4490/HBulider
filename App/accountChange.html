@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=.5,minimum-scale=.5,maximum-scale=.5,user-scalable=no" />
+    <title>账号修改</title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/common2.css" rel="stylesheet" />
+</head>
+	<body>
+
+		<div class="account_setting f_30">
+			<div class="account">
+				<input id="account" class="full_input" type="text" placeholder="输入新的账号" />
+			</div>
+			
+			<p class="account_mark f_24 gray_7">账号只能修改一次（6-24个字符之间）</p>
+				
+			<div id="confirm" class="logout">确认修改</div>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var account = document.getElementById("account");
+				var confirm = document.getElementById("confirm");
+				var timer = null;
+				account.addEventListener("keyup",a,false);
+				
+				function a(){
+					if(account.value == "")
+					{
+						confirm.style.background = "#A7A7A7";
+					}
+					else
+					{
+						confirm.style.background = "#43a854";
+					}
+				}
+				
+				confirm.addEventListener("touchend",checkAccount,false);
+				
+				function checkAccount(){
+					var re = /^[0-9a-zA-Z]+$/;
+					if(!re.test(account.value))
+					{
+						mui.toast("你输入的字符不是数字或者字母");
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+.add_new_cuisines { width: 2.5rem; height: 1.5rem; line-height: 1.5rem; border: #fff 1px solid; border-radius: 8px; color: #fff; text-align: center; position: absolute; top: .35rem; right: .35rem;}
+
+.top_nav { position: relative; z-index: 101; background: #fff; width: 100%; height: 2.2rem; border-bottom: #DDDDDB 2px solid;}
+.top_nav>div { overflow: hidden;}
+.select_box { width: 13.275rem; height: 1.45rem; margin: .35rem 0 0 .5rem; border: #ddd 1px solid; border-radius: 8px; overflow: hidden;}
+.select_box li { width: 4.425rem; height: 1.45rem; line-height: 1.45rem; text-align: center; color: #58ACE8; border-right: #ddd 1px solid; box-sizing: border-box; display: block; float: left;}
+.select_box2 li { width: 50%; height: 1.45rem; line-height: 1.45rem; text-align: center; color: #A7A7A7; border-right: #ddd 1px solid; box-sizing: border-box; display: block; float: left; position: relative;}
+.select_box li:last-child { border: none;}
+.select_box li.act { background: #58ACE8; color: #fff;}
+.select_box2 { width: 13.25rem; height: 1.45rem; margin: .35rem 0 0 .5rem; border: #ddd 1px solid; border-radius: 8px; overflow: hidden;;}
+.select_box2 li:last-child { border: none;}
+.select_box2 li.act {color: #58ACE8;}
+.select_box2 li img { position: absolute; width: .75rem; height: .75rem; bottom: .1rem; right: .2rem;}
+.top_nav>div>img { width: 1.2rem; height: 1.2rem; float: right; padding: .5rem .5rem 0 0;}
+.cuisines_list { padding: 0 .475rem;}
+.cuisines_list li { height: 3.45rem; padding: .5rem 0; border-bottom: #ddd 1px solid;}
+.cuisines_list li:last-child { border-bottom: none;}
+.i_check { width: 2.225rem; height: 3.45rem; background-size: 53.9%; background-position: center; float: left;}
+.cuisines_list img { width: 3.45rem; height: 3.45rem; float: left; margin-right: .525rem;}
+.cuisines_list h1 { margin: .95rem 0 .225rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.cuisines_list .edit_box { float: right; width: 2.475rem; text-align: center; height: 2.35rem; line-height: 2.35rem; margin: .55rem 0; border-left: #ddd 1px solid;}
+
+.bottom_option { height: 2.4rem; width: 100%; position: fixed; bottom: 0; background: #fff; z-index: 10; border-top: #E5E5E5 2px solid;}
+.bottom_option .all { width: 4.5rem; height: 2.4rem; line-height: 2.4rem; float: left;}
+.bottom_option .i_check_all { float: left; margin: .6rem .5rem;}
+.bottom_option .btn { width: 2.3rem; height: 1.45rem; line-height: 1.45rem; text-align: center; color: #58ACE8; border-radius: 5px; border: #ddd 1px solid; float: left; margin: .45rem .5rem 0 0;}
+
+.hover_list1,.hover_list2 { position: absolute; width: 50%; height: 15.3rem; top: 2.2rem; margin-top: 2px; display: none;}
+.hover_list1 { background: #EFEFF4;}
+.hover_list2 { background: #fff;}
+.hover_list1 .list { width: 100%; background: #EFEFF4;}
+.hover_list1 .list li { height: 2.2rem; line-height: 2.2rem; padding-left: .75rem;}
+.hover_list1 .list li.act { background: #fff; position: relative;}
+.hover_list1 .list li.act:before { content: ""; width: .2rem; height: 2.2rem; position: absolute; left: 0; top: 0; background: #FF5F3E;}
+
+.hover_list2 { right: 0;}
+.hover_list2 .list { background: #fff;}
+.hover_list2 .list li { height: 2.2rem; line-height: 2.2rem; margin: 0 .5rem 0 .45rem; border-bottom: #E5E5E5 1px solid;}
+.hover_list2 .list li:last-child { border-bottom: #fff 1px solid;}
+
+.hover_list3 { background: #fff; position: absolute; width: 100%; height: 15.3rem; top: 2.2rem; margin-top: 2px; display: none;}
+.hover_list3 .list2 {}
+.hover_list3 .list2 li { height: 2.2rem; line-height: 2.2rem; padding-left: .75rem; border-bottom: #ddd 1px solid; color: #000;}
